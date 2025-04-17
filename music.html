@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <button class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</button>
+    
+        <div class="nav-left desktop-menu">
+          <div class="dropdown">
+            <a href="index.html">Home</a>
+            <div class="dropdown-content">
+              <a href="catalog.html">Catalog</a>
+              <a href="music.html">Music</a>
+              <a href="aboutus.html">About us!</a>
+            </div>
+          </div>
+          <a href="#">Contact</a>
+        </div>
+    
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="index.html">Home</a>
+          <a href="catalog.html">Catalog</a>
+          <a href="music.html">Music</a>
+          <a href="aboutus.html">About us!</a>
+          <a href="#">Contact</a>
+        </div>
+    
+        <div class="nav-logo">
+          <a href="index.html">
+            <img class="SilverlakeMurderLogo" src="silverlake_murder_logo.png" alt="Home">
+          </a>
+        </div>
+    
+        <div class="nav-currency dropdown">
+          <a href="#" id="current-currency" onclick="toggleCurrencyDropdown(event)">USD 🇺🇸</a>
+          <div class="dropdown-content" id="currency-dropdown">
+            <a href="#" onclick="setCurrency('USD', '🇺🇸')">USD 🇺🇸</a>
+            <a href="#" onclick="setCurrency('EUR', '🇪🇺')">EUR 🇪🇺</a>
+            <a href="#" onclick="setCurrency('GBP', '🇬🇧')">GBP 🇬🇧</a>
+            <a href="#" onclick="setCurrency('SEK', '🇸🇪')">SEK 🇸🇪</a>
+          </div>
+        </div>
+      </div>
+
+      <h1>Music</h1>
+
+    <script src="js.js"></script>
+</body>
+</html>
