@@ -1,184 +1,165 @@
-/* ------------------- Global settings ------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
 body {
   background-color: rgb(17, 17, 17);
   margin: 0;
   padding: 0;
-  font-family: 'Jim', sans-serif;
+  font-family: 'Metal Mania', cursive;
 }
 
-h1{
+h1 {
   color: rgb(255, 255, 255);
   text-align: center;
   font-size: 40px;
+}
+
+h2 {
+  font-size: 40px;
+  color: white;
+  margin-left: 25%;
+  margin-top: 100px;
 }
 
 * {
   transition: all 0.3s ease-in-out;
 }
 
-.tulpen-one-regular {
-  font-family: "Tulpen One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
 /* ------------------- NAVBAR ------------------- */
 .navbar {
-  background-color: rgb(23, 23, 23);
+  background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+  border-bottom: 3px solid white;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
   height: 80px;
-  padding: 0 20px;
   position: relative;
   z-index: 10;
+  letter-spacing: 1px;
 }
 
-/* LOGO Centering*/
 .nav-logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  height: 100%;
   display: flex;
   align-items: center;
-  height: 100%;
 }
+
 .SilverlakeMurderLogo {
   height: 60px;
   object-fit: contain;
 }
 
-/* Desktop Navigation */
 .nav-left {
   display: flex;
   align-items: center;
   gap: 20px;
 }
+
 .desktop-menu a {
   color: #ccc;
   text-decoration: none;
-  padding: 14px 20px;
-  transition: color 0.3s ease;
+  padding: 12px 20px;
+  border: 2px solid #333;
+  margin: 0 4px;
+  text-transform: uppercase;
+  font-size: 16px;
 }
+
 .desktop-menu a:hover {
-  color: #fff;
+  background-color: #fff;
+  color: #000;
+  text-shadow: 0 0 5px #fff;
+  border-color: #fff;
+  box-shadow: 0 0 10px #fff;
+  transform: scale(1.05);
 }
+
+/* Dropdown */
 .dropdown {
   position: relative;
 }
+
 .dropdown-content {
+  background-color: #111;
+  border: 2px solid #1a1a1a;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 14px;
+  border-radius: 4px;
   position: absolute;
-  background-color: rgb(23, 23, 23);
-  min-width: 160px;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
+  left: 0;
+  transform: translateY(-10px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  text-align: center;
-  padding: 10px 0;
-  border-radius: 5px;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  min-width: 160px;
+  z-index: 10;
 }
+
 .dropdown:hover .dropdown-content {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
+
 .dropdown-content a {
-  padding: 12px 16px;
   display: block;
-  white-space: nowrap;
-  color: #ccc;
+  padding: 10px 16px;
   text-decoration: none;
+  color: #ccc;
 }
+
 .dropdown-content a:hover {
-  background-color: #333;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Currency Dropdown */
+.nav-currency {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-currency a {
   color: #fff;
-}
-
-/* ------------------- Currency ------------------- */
-/* Currency Container */
-.nav-currency {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-/* Currency Button */
-.nav-currency a {
-  color: #ccc;
   font-size: 13px;
-  padding: 6px 10px;
+  padding: 6px 12px;
+  border: 2px solid #aaa;
   text-decoration: none;
-  border-radius: 4px;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
-/* Dropdown Menu (bara dator) */
-.nav-currency {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.nav-currency a {
-  color: #ccc;
-  font-size: 13px;
-  padding: 6px 10px;
-  text-decoration: none;
-  border-radius: 4px;
-  cursor: pointer;
+.nav-currency a:hover {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 8px #fff;
+  border-color: #fff;
 }
 
 .nav-currency .dropdown-content {
-  position: absolute;
   top: 100%;
   right: 0;
-  background-color: rgb(23, 23, 23);
-  border-radius: 5px;
-  min-width: 120px;
-  display: none;
-  flex-direction: column;
-  z-index: 20;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  left: auto;
+  transform: translateY(-10px);
 }
 
-/* dropdown when hovering (bara dator) */
 .nav-currency:hover .dropdown-content {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.nav-currency .dropdown-content.show {
-  display: flex;
-}
-
-#currency-dropdown a {
-  padding: 8px 12px;
-  font-size: 12px;
-  color: #ccc;
-  text-decoration: none;
-}
-
-#currency-dropdown a:hover {
-  background-color: #444;
-  color: #fff;
-}
-
-/* ------------------- Mobil version ------------------- */
-@media (max-width: 768px) {
-  .nav-currency a {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
-
-  .nav-currency .dropdown-content {
-    right: 0;
-    left: auto;
-  }
-}
-
+/* Mobile Menu */
 .mobile-menu-icon {
   display: none;
   font-size: 28px;
@@ -191,20 +172,33 @@ h1{
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background-color: rgb(23, 23, 23);
+  background-color: #111;
+  border-top: 2px solid #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   position: absolute;
   top: 80px;
   left: 0;
   width: 100%;
-  z-index: 15;
+  z-index: 9;
 }
+
 .mobile-menu a {
-  color: #ccc;
-  text-decoration: none;
   padding: 12px 20px;
+  text-decoration: none;
+  color: #ccc;
+  border-bottom: 1px solid #222;
 }
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
 .mobile-menu a:hover {
-  background-color: #333;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px #fff;
 }
 
 /* ------------------- VIDEO ------------------- */
@@ -214,6 +208,7 @@ h1{
   position: relative;
   overflow: hidden;
 }
+
 .HomeVideo video {
   position: absolute;
   top: 50%;
@@ -224,7 +219,78 @@ h1{
   object-fit: cover;
 }
 
-/* ------------------- RESPONSIVENESS (alla enheter) ------------------- */
+/* ------------------- SLIDESHOW ------------------- */
+.slideshow-container {
+  margin: 60px auto;
+  position: relative;
+  max-width: 1200px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  filter: brightness(0.9) contrast(1.1);
+  transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px 2px white;
+  filter: brightness(1);
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 6px 0 0 6px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 15px white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ------------------- RESPONSIVE ------------------- */
 @media (max-width: 1024px) {
   .desktop-menu {
     display: none;
@@ -234,7 +300,7 @@ h1{
     display: block;
   }
 
-  .nav-logo .SilverlakeMurderLogo {
+  .SilverlakeMurderLogo {
     height: 50px;
   }
 
@@ -255,7 +321,7 @@ h1{
     height: 300px;
   }
 
-  .nav-logo .SilverlakeMurderLogo {
+  .SilverlakeMurderLogo {
     height: 40px;
   }
 
