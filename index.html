@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
   <div class="navbar">
@@ -51,6 +55,26 @@
   <div class="HomeVideo">
     <video src="hostile.mp4" autoplay muted loop playsinline></video>
   </div>
+
+
+  <h2>Latest News!</h2>
+
+  <div class="slideshow-container">
+    <div class="slide fade">
+      <img src="placeholder1.png" alt="Image 1">
+    </div>
+    <div class="slide fade">
+      <img src="placeholder1.png" alt="Image 2">
+    </div>
+    <div class="slide fade">
+      <img src="placeholder1.png" alt="Image 3">
+    </div>
+  
+    <!-- Navigation buttons -->
+    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  </div>
+  
 
   <script src="js.js"></script>
 </body>
