@@ -24,6 +24,37 @@ h2 {
   transition: all 0.3s ease-in-out;
 }
 
+
+/*------------------- Design -------------------*/
+.imgdesign{
+  position: absolute;
+}
+
+
+#spiderweb{
+  
+}
+
+#spiderwebright{
+  right: 0;
+}
+
+#skull1{
+  transform: rotate(-30deg);
+  margin-top: 250px;
+  margin-left: 30px;
+}
+
+#skull2{
+  right: 0;
+  margin-right: 800px;
+  transform: rotate(10deg);
+}
+
+#tombstone{
+  right: 0;
+}
+
 /* ------------------- NAVBAR ------------------- */
 .navbar {
   background: linear-gradient(to right, #0d0d0d, #1a1a1a);
@@ -220,8 +251,13 @@ h2 {
 }
 
 /* ------------------- SLIDESHOW ------------------- */
+#latestnews{
+  position: absolute;
+  margin-top: 200px;
+}
+
 .slideshow-container {
-  margin: 60px auto;
+  margin: 300px auto;
   position: relative;
   max-width: 1200px;
   width: 90%;
@@ -289,6 +325,20 @@ h2 {
   box-shadow: 0 0 15px white;
   transform: translateY(-50%) scale(1.1);
 }
+
+/* ------------------- Footer ------------------- */
+
+.footer {
+  background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+  border-top: 3px solid white;
+  box-shadow: 0 -6px 20px rgba(255, 255, 255, 0.3);
+  color: #ccc;
+  padding: 24px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
 
 /* ------------------- RESPONSIVE ------------------- */
 @media (max-width: 1024px) {
