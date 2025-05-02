@@ -1,49 +1,45 @@
+// -------------------- Currency Dropdown --------------------
 function toggleCurrencyDropdown(event) {
-    event.preventDefault();
-    const dropdown = document.getElementById("currency-dropdown");
-    dropdown.classList.toggle("show");
+  event.preventDefault();
+  const dropdown = document.getElementById("currency-dropdown");
+  dropdown.classList.toggle("show");
+}
+
+document.addEventListener("click", function (e) {
+  const currencyBtn = document.getElementById("current-currency");
+  const dropdown = document.getElementById("currency-dropdown");
+
+  if (!currencyBtn.contains(e.target) && !dropdown.contains(e.target)) {
+    dropdown.classList.remove("show");
   }
-  
-  document.addEventListener("click", function (e) {
-    const currencyBtn = document.getElementById("current-currency");
-    const dropdown = document.getElementById("currency-dropdown");
-  
-    if (!currencyBtn.contains(e.target) && !dropdown.contains(e.target)) {
-      dropdown.classList.remove("show");
-    }
-  });
-  
-  function setCurrency(code, flag) {
-    const current = document.getElementById("current-currency");
-    current.textContent = `${code} ${flag}`;
-    document.getElementById("currency-dropdown").classList.remove("show");
-  }
-  
-  
+});
+
+function setCurrency(code, flag) {
+  const current = document.getElementById("current-currency");
+  current.textContent = `${code} ${flag}`;
+  document.getElementById("currency-dropdown").classList.remove("show");
+}
+
+// -------------------- Mobile Menu --------------------
 document.querySelector('.mobile-menu-icon').addEventListener('click', () => {
   document.querySelector('.mobile-menu').classList.toggle('show');
 });
-
 
 document.querySelector('.nav-currency a').addEventListener('click', (e) => {
   e.preventDefault();
   document.querySelector('.nav-currency .dropdown-content').classList.toggle('show');
 });
 
-
-
 function toggleMobileMenu() {
-    const menu = document.getElementById("mobileMenu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-  }
-  
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
 
-
-
-
-// -------------------- Slideshow --------------------
+// -------------------- Slideshow + YouTube Video Control --------------------
 let slideIndex = 0;
 let slideTimer;
+let player;
+let videoPlaying = false;
 
 const slides = document.getElementsByClassName("slide");
 
@@ -59,20 +55,72 @@ function showSlide(n) {
 }
 
 function changeSlide(n) {
+  if (videoPlaying && player) {
+    player.pauseVideo();
+    videoPlaying = false;
+    startSlideShow();
+  }
   slideIndex += n;
   showSlide(slideIndex);
-  resetSlideTimer();
+}
+
+function startSlideShow() {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(() => {
+    if (!videoPlaying) {
+      slideIndex++;
+      showSlide(slideIndex);
+    }
+  }, 5000);
 }
 
 function resetSlideTimer() {
   clearInterval(slideTimer);
-  slideTimer = setInterval(() => {
-    changeSlide(1);
-  }, 5000);
+  startSlideShow();
 }
 
-// Initial setup
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('youtube-video', {
+    events: {
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING) {
+    videoPlaying = true;
+    clearInterval(slideTimer);
+  }
+  if (event.data == YT.PlayerState.ENDED) {
+    videoPlaying = false;
+    startSlideShow();
+  }
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   showSlide(slideIndex);
-  resetSlideTimer();
+  startSlideShow();
+
+
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  const firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 });
+
+// Pause slideshow
+const slideshowContainer = document.querySelector(".slideshow-container");
+
+if (slideshowContainer) {
+  slideshowContainer.addEventListener("mouseenter", () => {
+    clearInterval(slideTimer);
+  });
+
+  slideshowContainer.addEventListener("mouseleave", () => {
+    if (!videoPlaying) {
+      startSlideShow();
+    }
+  });
+}
