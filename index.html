@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Home - Silverlake Murder</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-
+        <link rel="icon" type="" href="images/silverlake_murder_logo.png">
 </head>
 <body>
   <div class="navbar">
@@ -35,7 +35,7 @@
 
     <div class="nav-logo">
       <a href="index.html">
-        <img class="SilverlakeMurderLogo" src="silverlake_murder_logo.png" alt="Home">
+        <img class="SilverlakeMurderLogo" src="images/silverlake_murder_logo.png" loading="lazy" alt="Home">     <!-- Jag förminskade bilden så mycket som det gick -->
       </a>
     </div>
 
@@ -52,24 +52,28 @@
   </div>
 
   <div class="HomeVideo">
-    <video src="hostile.mp4" autoplay muted loop playsinline></video>
+    <video src="silverlake murder homepage.mov" autoplay muted loop playsinline></video>
   </div>
 
 
   <div id="spiderweb" class="imgdesign">
-    <img src="spiderweb.png" alt="">
+    <img src="images/spiderweb_white.png" loading="lazy" alt="">
   </div>
 
   <div id="spiderwebright" class="imgdesign">
-    <img src="spiderwebright.png" alt="">
+    <img src="images/spiderwebright_white.png" loading="lazy" alt="">
   </div>
 
   <div id="skull1" class="imgdesign">
-    <img src="skull1.gif" alt="">
+    <img src="images/skull1.gif" loading="lazy" alt="">
   </div>
 
   <div id="skull2" class="imgdesign">
-    <img src="skull2.gif" alt="">
+    <img src="images/skull2.gif" loading="lazy" alt="">
+  </div>
+
+  <div id="skull3" class="imgdesign">
+    <img src="images/skull3.gif" loading="lazy" alt="">
   </div>
 
 
@@ -77,23 +81,51 @@
 
   <div class="slideshow-container">
     <div class="slide fade">
-      <img src="placeholder1.png" alt="Image 1">
+      <img src="images/nextgig.png" loading="lazy" alt="Image 1">
     </div>
-    <div class="slide fade">
-      <img src="placeholder1.png" alt="Image 2">
-    </div>
-    <div class="slide fade">
-      <img src="placeholder1.png" alt="Image 3">
-    </div>
-
   
-    <!-- Navigation buttons -->
+    <div class="slide fade">
+      <iframe 
+        id="youtube-video"
+        width="100%" 
+        height="600" 
+        src="https://www.youtube.com/embed/5aX_mrIrWWA?enablejsapi=1" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  
+    <div class="slide fade">
+      <img src="images/blackout.png" loading="lazy" alt="Image 3">
+    </div>
+    
+    <!-- Slideshow buttons -->
     <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
     <a class="next" onclick="changeSlide(1)">&#10095;</a>
   </div>
-  
-<div class="tombstone">
-  <img src="tombstone.png" alt="">
+
+
+<h2 id="events">Upcoming Events!</h2>
+    
+<div class="eventlist">
+    <div class="eventlistlinks">
+          <a href="https://www.bandsintown.com/e/106676221?affil_code=js_www.silverlakemurder.com&app_id=js_www.silverlakemurder.com&came_from=242&utm_campaign=event&utm_medium=web&utm_source=widget">Fri, MAY 2 @19:00 - Hexis 15 Years Anniversary Tour</a>
+          <p class="eventlocation">Skellefteå, Sweden</p>
+    </div>
+    <div class="eventlistlinks">
+          <a href="https://www.bandsintown.com/e/106676228?affil_code=js_www.silverlakemurder.com&app_id=js_www.silverlakemurder.com&came_from=242&utm_campaign=event&utm_medium=web&utm_source=widget">Sat, MAY 3 @19:00 - Hexis 15 Years Anniversary Tour</a>
+          <p class="eventlocation">Luleå, Sweden</p>
+    </div>
+    <div class="eventlistlinks">
+          <a href="https://www.bandsintown.com/e/106313987?affil_code=js_www.silverlakemurder.com&app_id=js_www.silverlakemurder.com&came_from=242&utm_campaign=event&utm_medium=web&utm_source=widget">Jun. 27 - 28, 2025 - High 5ive Summer Party 2025</a>
+          <p class="eventlocation">Stockholm, Sweden</p>
+  </div>
+</div>
+
+<div class="images">
+  <img src="images/IMG_0001.png" loading="lazy" alt="">      <!-- Jag förminskade bilden så mycket som det gick -->
+  <img src="images/IMG_0002.png" loading="lazy" alt="">      <!-- Jag förminskade bilden så mycket som det gick -->
 </div>
 
   <!-- Footer -->
@@ -102,6 +134,7 @@
       <p>&copy; 2025 Silverlake Murder. All rights reserved.</p>
     </div>
   </footer>
+
 
   <script src="js.js"></script>
 </body>
