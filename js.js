@@ -124,3 +124,17 @@ if (slideshowContainer) {
     }
   });
 }
+
+function validateEmail() {
+  const emailInput = document.getElementById("email").value;
+  const errorMsg = document.getElementById("errorMsg");
+
+  if (!emailInput.includes("@")) {
+    errorMsg.textContent = "Email must contain an '@' symbol.";
+    return false;
+  }
+
+  errorMsg.textContent = "";
+  alert("Message sent successfully!");
+  return true;
+}
