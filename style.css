@@ -16,6 +16,7 @@ h1, h2 {
   font-size: 40px;
 }
 
+
 h2 {
   text-shadow: 0 0 10px #fff, 0 0 20px #f0f;
   margin: 100px 0 0 25%;
@@ -30,7 +31,7 @@ h2 {
 }
 
 .images img {
-  max-width: 100%; /* ensures they stay responsive */
+  max-width: 100%;
   height: auto;
   overflow: hidden;
 }
@@ -116,7 +117,7 @@ h2 {
 @media (max-width: 1860px) {
   #skull1, #skull2, #skull3,
   #spiderweb, #spiderwebright {
-    display: none; /* Or use scaled positioning if you prefer */
+    display: none;
   }
 }
 
@@ -445,12 +446,6 @@ h2 {
   animation: floating 6s ease-in-out infinite;
 }
 
-
-
-
-
-
-
 /* -------------------------------------- Catalog HTML CSS -------------------------------------- */
 .catalog {
   display: grid;
@@ -463,7 +458,8 @@ h2 {
 
 
 .product {
-  background: rgb(37, 37, 37);
+  background: #1a1a1a;
+  border: 2px solid white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -517,15 +513,11 @@ h2 {
   }
 }
 
-
-
 /* -------------------------------------- Music HTML CSS -------------------------------------- */
 
 #musictitle {
   text-align: left;
 }
-
-
 
 .music-box {
   border: 2px solid white;
@@ -541,7 +533,6 @@ h2 {
 .music-box img {
   width: 150px;
   height: auto;
-
 }
 
 .blackout-content {
@@ -560,4 +551,79 @@ h2 {
   margin-top: 10px;
   color: white;
   text-decoration: underline;
+}
+
+/* -------------------------------------- Contact HTML CSS -------------------------------------- */
+
+.contact-container {
+  max-width: 600px;
+  margin: 200px auto;
+  padding: 40px;
+  background-color: #1a1a1a;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
+
+.contact-container input,
+.contact-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  background-color: #111;
+  border: 2px solid #444;
+  color: white;
+  font-family: 'Metal Mania', cursive;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 8px white;
+}
+
+
+/* -------------------------------------- About us! -------------------------------------- */
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+  max-width: 1200px;
+  padding: 40px;
+  background-color: #1a1a1a;
+  border: 2px solid #333;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.about-text {
+  flex: 1;
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  min-width: 300px;
+  max-width: 900px; 
+}
+
+.about-text h1 {
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: white;
+  text-shadow: 0 0 10px #fff, 0 0 20px #f0f;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
 }
