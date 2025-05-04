@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact - Silverlake Murder</title>
+            <link rel="stylesheet" href="style.css">
+            <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+            <link rel="icon" type="" href="images/silverlake_murder_logo.png">
+    </head>
+<body>
+    <div class="navbar">
+        <button class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</button>
+    
+        <div class="nav-left desktop-menu">
+          <div class="dropdown">
+            <a href="index.html">Home</a>
+            <div class="dropdown-content">
+              <a href="catalog.html">Catalog</a>
+              <a href="music.html">Music</a>
+              <a href="aboutus.html">About us!</a>
+            </div>
+          </div>
+          <a href="contact.html">Contact</a>
+        </div>
+    
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="index.html">Home</a>
+          <a href="catalog.html">Catalog</a>
+          <a href="music.html">Music</a>
+          <a href="aboutus.html">About us!</a>
+          <a href="contact.html">Contact</a>
+        </div>
+    
+        <div class="nav-logo">
+          <a href="index.html">
+            <img class="SilverlakeMurderLogo" src="images/silverlake_murder_logo.png" alt="Home">
+          </a>
+        </div>
+    
+        <div class="nav-currency dropdown">
+          <a href="#" id="current-currency" onclick="toggleCurrencyDropdown(event)">USD 🇺🇸</a>
+          <div class="dropdown-content" id="currency-dropdown">
+            <a href="#" onclick="setCurrency('USD', '🇺🇸')">USD 🇺🇸</a>
+            <a href="#" onclick="setCurrency('EUR', '🇪🇺')">EUR 🇪🇺</a>
+            <a href="#" onclick="setCurrency('GBP', '🇬🇧')">GBP 🇬🇧</a>
+            <a href="#" onclick="setCurrency('SEK', '🇸🇪')">SEK 🇸🇪</a>
+          </div>
+        </div>       
+      </div>
+
+      <div id="spiderweb" class="imgdesign">
+        <img src="images/spiderweb_white.png" loading="lazy" alt="">
+      </div>
+    
+      <div id="spiderwebright" class="imgdesign">
+        <img src="images/spiderwebright_white.png" loading="lazy" alt="">
+      </div>
+
+      <h1>Contact us</h1>
+
+    <div class="contact-container">
+        <form id="contactForm" onsubmit="return validateEmail()">
+          <label for="email">Your Gmail:</label><br>
+          <input type="email" id="email" name="email" placeholder="you@gmail.com" required><br>
+    
+          <label for="message">Your Message:</label><br>
+          <textarea id="message" name="message" rows="5" required></textarea><br>
+    
+          <button type="submit" class="buy-button">Send</button>
+        </form>
+      </div>
+
+      <div class="images">
+        <img src="images/IMG_0003.png" loading="lazy" alt="">      <!-- Jag förminskade bilden så mycket som det gick -->
+        <img src="images/IMG_0004.png" loading="lazy" alt="">      <!-- Jag förminskade bilden så mycket som det gick -->
+      </div>
+
+      <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Silverlake Murder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js.js"></script>
+</body>
+</html>
