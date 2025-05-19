@@ -125,16 +125,47 @@ if (slideshowContainer) {
   });
 }
 
-function validateEmail() {
-  const emailInput = document.getElementById("email").value;
-  const errorMsg = document.getElementById("errorMsg");
 
-  if (!emailInput.includes("@")) {
-    errorMsg.textContent = "Email must contain an '@' symbol.";
-    return false;
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // Stop page reload
+
+  // Reset previous messages
+  document.getElementById("emailError").textContent = "";
+  document.getElementById("subjectError").textContent = "";
+  document.getElementById("messageError").textContent = "";
+  document.getElementById("successMessage").textContent = "";
+
+  // Get input values
+  const email = document.getElementById("email").value.trim();
+  const subject = document.getElementById("subject").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  let isValid = true;
+
+  // Validate Gmail
+  const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+  if (!gmailRegex.test(email)) {
+    document.getElementById("emailError").textContent = "Please enter a valid Gmail address.";
+    isValid = false;
   }
 
-  errorMsg.textContent = "";
-  alert("Message sent successfully!");
-  return true;
-}
+  // Validate Subject
+  if (subject === "") {
+    document.getElementById("subjectError").textContent = "Please enter a subject.";
+    isValid = false;
+  }
+
+  // Validate Message
+  if (message === "") {
+    document.getElementById("messageError").textContent = "Please write a message.";
+    isValid = false;
+  }
+
+  // If all valid
+  if (isValid) {
+    document.getElementById("successMessage").textContent = "Thank you! Your message has been sent.";
+    // Optional: Clear form
+    document.getElementById("contactForm").reset();
+  }
+});
