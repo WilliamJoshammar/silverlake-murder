@@ -37,7 +37,6 @@ h2 {
 }
 
 /* ------------------- Events ------------------- */
-/* ------------------- Events ------------------- */
 #events {
   position: absolute;
   margin-top: 100px;
@@ -99,7 +98,7 @@ h2 {
   color: #181818;
 }
 
-/* Mobile responsiveness for events */
+/* Mobile responsiveness events */
 @media (max-width: 768px) {
   #events {
     margin-top: 70px;
@@ -214,7 +213,6 @@ h2 {
   gap: 20px;
 }
 
-/* Links */
 .desktop-menu a,
 .mobile-menu a,
 .nav-currency a {
@@ -238,7 +236,6 @@ h2 {
   border-color: #fff;
 }
 
-/* Dropdown */
 .dropdown, .nav-currency {
   position: relative;
 }
@@ -501,11 +498,43 @@ h2 {
   border-top: 3px solid white;
   box-shadow: 0 -6px 20px rgba(255, 255, 255, 0.3);
   color: #ccc;
-  padding: 24px;
+  padding: 20px 0;
   text-align: center;
-  letter-spacing: 1px;
-  font-size: 16px;
-}
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .social-icons {
+    margin-top: 15px;
+  }
+  
+  .social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-list li {
+    margin: 0 10px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #ccc;
+  }
 
 /* ------------------- RESPONSIVE ------------------- */
 @media (max-width: 1024px) {
