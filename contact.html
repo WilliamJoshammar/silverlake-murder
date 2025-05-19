@@ -7,7 +7,7 @@
             <link rel="stylesheet" href="style.css">
             <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     
-            <link rel="icon" type="" href="images/silverlake_murder_logo.png">
+            <link rel="icon" type="images/x-icon" href="images/silverlake_murder_logo.png">
     </head>
 <body>
     <div class="navbar">
@@ -58,19 +58,28 @@
         <img src="images/spiderwebright_white.png" loading="lazy" alt="">
       </div>
 
-      <h1>Contact us</h1>
+      <main>
+  <h1>Contact Us</h1>
 
-    <div class="contact-container">
-        <form id="contactForm" onsubmit="return validateEmail()">
-          <label for="email">Your Gmail:</label><br>
-          <input type="email" id="email" name="email" placeholder="you@gmail.com" required><br>
-    
-          <label for="message">Your Message:</label><br>
-          <textarea id="message" name="message" rows="5" required></textarea><br>
-    
-          <button type="submit" class="buy-button">Send</button>
-        </form>
-      </div>
+  <section class="contact-container">
+    <form id="contactForm" novalidate>
+      <label for="email">Your Gmail:</label>
+      <input type="email" id="email" name="email" placeholder="you@gmail.com" required>
+      <div class="error-message" id="emailError"></div>
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" placeholder="What's your question?" required>
+      <div class="error-message" id="subjectError"></div>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      <div class="error-message" id="messageError"></div>
+
+      <button type="submit" class="button">Send Message</button>
+      <div id="successMessage" class="success-message"></div>
+    </form>
+  </section>
+</main>
 
       <div class="images">
         <img src="images/IMG_0003.png" loading="lazy" alt="">      <!-- Jag förminskade bilden så mycket som det gick -->
