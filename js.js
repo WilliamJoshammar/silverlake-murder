@@ -178,7 +178,7 @@ function initCountdown() {
 
       const now = new Date();
       
-      const targetDate = new Date(2025, 5, 27, 0, 0, 0);
+      const targetDate = new Date(2025, 5, 27, 0, 0, 0); // Du kan ändra Date så kan du se hur countdownen förändras på hemsidan när det är 24h kvar och när det är 0
       
       const timeDifference = targetDate.getTime() - now.getTime();
 
