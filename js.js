@@ -133,7 +133,7 @@ function initContactForm() {
 
     let isValid = true;
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailRegex = /^[a-öA-Ö0-9._%+-]+@[a-öA-Ö0-9.-]+\.[a-öA-Ö]{2,}$/;
     if (!emailRegex.test(email)) {
       document.getElementById("emailError").textContent = "Please enter a valid email address.";
       isValid = false;
